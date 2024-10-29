@@ -4,15 +4,6 @@ class Node:
         self.next = None
 
 def reverse_list(head):
-    """
-    Реверсує однозв'язний список.
-
-    Args:
-      head: Голова списку.
-
-    Returns:
-      Голова реверсованого списку.
-    """
     prev = None
     current = head
     while current:
@@ -23,15 +14,6 @@ def reverse_list(head):
     return prev
 
 def insertion_sort(head):
-    """
-    Сортує однозв'язний список сортуванням вставками.
-
-    Args:
-      head: Голова списку.
-
-    Returns:
-      Голова відсортованого списку.
-    """
     if head is None or head.next is None:
         return head
 
@@ -44,16 +26,6 @@ def insertion_sort(head):
     return sorted_list
 
 def sorted_insert(head, new_node):
-    """
-    Вставляє вузол у відсортований список.
-
-    Args:
-      head: Голова відсортованого списку.
-      new_node: Вузол для вставки.
-
-    Returns:
-      Голова відсортованого списку з вставленим вузлом.
-    """
     if head is None or head.data >= new_node.data:
         new_node.next = head
         return new_node
@@ -66,16 +38,6 @@ def sorted_insert(head, new_node):
     return head
 
 def merge_sorted_lists(head1, head2):
-    """
-    Об'єднує два відсортовані однозв'язні списки в один відсортований список.
-
-    Args:
-      head1: Голова першого списку.
-      head2: Голова другого списку.
-
-    Returns:
-      Голова об'єднаного відсортованого списку.
-    """
     if head1 is None:
         return head2
     if head2 is None:
@@ -90,18 +52,12 @@ def merge_sorted_lists(head1, head2):
     return merged_list
 
 def print_list(head):
-    """
-    Виводить список на екран.
-
-    Args:
-      head: Голова списку.
-    """
     current = head
     while current:
         print(current.data, end=" ")
         current = current.next
     print()
-# Створення списків
+    
 list1 = Node(5)
 list1.next = Node(3)
 list1.next.next = Node(1)
