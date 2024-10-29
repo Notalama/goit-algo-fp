@@ -10,10 +10,11 @@ def roll_dice(num_dice=2, num_rolls=10000):
     return probabilities
 
 def print_table(probabilities):
-    print("| Сума | Ймовірність |")
-    print("|---|---|")
-    for sum_, probability in probabilities.items():
-        print(f"| {sum_} | {probability:.4f} |")
+  print("| Сума | Ймовірність |")
+  print("|---|---|")
+  for sum_ in range(2, 13):
+    probability = probabilities.get(sum_, 0)
+    print(f"{sum_}\t{probability:.2%} ({probability*36:.0f}/36)")
 
 def plot_probabilities(probabilities):
     plt.bar(probabilities.keys(), probabilities.values())
@@ -24,6 +25,6 @@ def plot_probabilities(probabilities):
 
 # Симуляція кидків
 probabilities = roll_dice()
-
+print_table(probabilities)
 # Відображення графіка
 plot_probabilities(probabilities)
